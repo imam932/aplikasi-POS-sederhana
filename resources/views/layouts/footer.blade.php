@@ -203,7 +203,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="{{ asset('adminLTE/bower_components/jquery/dist/jquery.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('AdminLTE/bower_components/jquery/dist/jquery.min.js') }}" type="text/javascript"></script>
 {{-- jquery form validation --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
@@ -220,37 +220,37 @@
 <!-- Input mask igorescobar-->
 <script src="{{ asset('js/inputmask.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="{{ asset('adminLTE/bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('AdminLTE/bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
-<script src="{{ asset('adminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <!-- DataTables -->
-<script src="{{ asset('adminLTE/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('adminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ asset('AdminLTE/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('AdminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 <!-- SweetAlert 2-->
 <script src="{{ asset('sweetalert2/sweetalert2.all.min.js') }}"></script>
 <!-- Sparkline -->
-<script src="{{ asset('adminLTE/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
+<script src="{{ asset('AdminLTE/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
 <!-- jQuery Knob Chart -->
-<script src="{{ asset('adminLTE/bower_components/jquery-knob/dist/jquery.knob.min.js') }}"></script>
+<script src="{{ asset('AdminLTE/bower_components/jquery-knob/dist/jquery.knob.min.js') }}"></script>
 <!-- daterangepicker -->
-<script src="{{ asset('adminLTE/bower_components/moment/min/moment.min.js') }}"></script>
-<script src="{{ asset('adminLTE/bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+<script src="{{ asset('AdminLTE/bower_components/moment/min/moment.min.js') }}"></script>
+<script src="{{ asset('AdminLTE/bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
 <!-- datepicker -->
-<script src="{{ asset('adminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('AdminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="{{ asset('adminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
+<script src="{{ asset('AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
 <!-- Slimscroll -->
-<script src="{{ asset('adminLTE/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
+<script src="{{ asset('AdminLTE/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
 <!-- FastClick -->
-<script src="{{ asset('adminLTE/bower_components/fastclick/lib/fastclick.js') }}"></script>
+<script src="{{ asset('AdminLTE/bower_components/fastclick/lib/fastclick.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('adminLTE/dist/js/adminlte.min.js') }}"></script>
+<script src="{{ asset('AdminLTE/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('adminLTE/dist/js/demo.js') }}"></script>
+<script src="{{ asset('AdminLTE/dist/js/demo.js') }}"></script>
 @yield('script')
 
 </body>
