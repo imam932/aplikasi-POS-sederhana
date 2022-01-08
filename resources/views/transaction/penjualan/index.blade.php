@@ -26,7 +26,12 @@
                         <div class="form-group">
                             <label class="control-label col-sm-4">Scan Barcode [Ctrl+Q] :</label>
                             <div class="col-sm-8">
-                                <input type="text" placeholder="Scan Barcode disini.." class="form-control" id="produk_kode" name="produk_kode">
+                                <div class="clearfix">
+                                    <div class="input-group">
+                                        <input type="text" placeholder="Scan Barcode disini.." class="form-control" id="produk_kode" name="produk_kode">
+                                        <span class="input-group-addon blue" id="search" style="cursor: pointer"><span class="fa fa-search" title="Pencarian Barang"></span></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -40,5 +45,6 @@
         </div>
     </div>
 </div>
+@include('transaction.pembelian.search')
 @endsection
 @include('transaction.penjualan.script')

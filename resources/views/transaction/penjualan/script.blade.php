@@ -316,6 +316,104 @@ $('document').ready(function(){
             });
         }
     });
+
+    table = $("#data-table").DataTable({
+              responsive: true,
+              processing : true,
+              serverSide : true,
+              ajax: {
+                url: "{{ route('transaction.penjualan.index') }}",
+              },
+              columns: [
+                {
+                  data: 'DT_RowIndex',
+                  name: 'DT_RowIndex'
+                },
+                {
+                  data: 'produk_kode',
+                  name: 'produk_kode'
+                },
+                {
+                  data: 'produk_nama',
+                  name: 'produk_nama'
+                },
+                {
+                  data: 'produk_beli',
+                  name: 'produk_beli'
+                },
+                {
+                  data: 'action',
+                  name: 'action',
+                  orderable: false,
+                  searchable: false
+                }
+              ],
+              "oLanguage" : {
+                "sSearch" : "Pencarian",
+                "oPaginate" : {
+                  "sNext" : "Berikutnya",
+                  "sPrevious" : "Sebelumnya",
+                  "sFirst" : "Awal",
+                  "sLast" : "Akhir",
+                  "sEmptyTable" : "Data tidak ditemukan!"
+                }
+              }
+            });
+
+    $("#search").on('click', function(e){
+        e.preventDefault();
+
+        let modal = $('#formModal');
+
+        modal.modal('show');
+    });
+
+    $('#data-table').on('click', '#select', function(e){
+        e.preventDefault();
+
+        let me      = $(this),
+            id      = me.attr('data'),
+            current = $(location).attr('href'),
+            link    = current.replace("transaction/penjualan", "master/produk");
+
+        $.ajax({
+            url: link+'/getProductById/'+id,
+            type: 'GET',
+            dataType: 'JSON',
+            success: function(data)
+            {
+                let stok    = (data.produk.stok == null) ? '0' : data.produk.stok.stok_jumlah,
+                    modal   = $('#formModal');
+
+                $('#produk_kode').val(data.produk.produk_kode);
+
+                $('#produk_kode').val("");
+                $.ajax({
+                    url: uri+'insertPenjualanCart',
+                    type:'POST',
+                    dataType:'JSON',
+                    data:{kode:data.produk.produk_kode},
+                    success: function(res)
+                    {
+                        getPenjualanCart();
+                        $('#produk_kode').focus();
+                    },
+                    error: function(res)
+                    {
+                        swal({
+                            type: "error",
+                            title: "Error!",
+                            text: res.responseJSON.message,
+                            timer: 2000,
+                            showConfirmButton: false
+                        })
+                    }
+                });
+
+                modal.modal('hide');
+            }
+        });
+    });
 });
 </script>
 @endsection

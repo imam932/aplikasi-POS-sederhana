@@ -27,7 +27,22 @@ class PenjualanController extends Controller
         Session::put('nav_active', 'transaksi');
         Session::put('sub_active', 'penjualan');
 
-        return view('transaction.penjualan.index');
+        $produk     = Produk::orderBy('produk_id', 'ASC')->get();
+
+        if(request()->ajax()) {
+            return datatables()->of($produk)
+            ->addColumn('action', function($data){
+                $button = '
+                    <a name="select" data="'.$data->produk_id.'" id="select" class="select btn btn-primary btn-sm">Pilih </a>
+                ';
+                return $button;
+            })
+            ->rawColumns(['action'])
+            ->addIndexColumn()
+            ->make(true);
+        }
+
+        return view('transaction.penjualan.index', compact('produk'));
     }
 
     public function getPenjualanCart()
